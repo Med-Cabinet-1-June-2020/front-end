@@ -3,7 +3,9 @@ import React from 'react'
 const Header = () => {
   return (
     <nav>
-      <h3>Header Component</h3>
+      <h3 class="logo">
+        Med <span id="logo-s">Cabient</span>
+      </h3>
     </nav>
   )
 }

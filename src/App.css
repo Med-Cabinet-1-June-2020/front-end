@@ -9,6 +9,7 @@
   border-radius: 8px;
   width: 50%;
   margin: 0 auto;
+  padding: .6rem;
 }
 
 .logo {
@@ -17,4 +18,24 @@
 }
 #logo-s {
   color: #7baa47;
+}
+.input-form {
+  display:flex;
+  flex-direction: column;
+
+}
+.input-form input{
+  display:flex;
+  justify-content:space-between;
+  margin-top: .6rem;
+
+}
+.input-form label{
+  margin-top: 1rem;
+}
+.errors {
+  color:red;
+}
+.submit-form button {
+  margin-top: 1rem;
 }

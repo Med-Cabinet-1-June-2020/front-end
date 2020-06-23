@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import formSchema from '../validation/formSchema'
 import * as Yup from 'yup'
+import Axios from 'axios'
 
 
 
 const initialFormValues = {
   username: '',
+  primaryemail: '',
   password: '',
 }
 
 const initialFormErrors = {
   username: '',
+  primaryemail: '',
   password: '',
 }
 
@@ -25,26 +28,38 @@ const Signup = () => {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(initalDisabled)
 
+  // const postNewUser = newUser => {
+  //   Axios.post('https://medcabinetjune2020.herokuapp.com/createnewuser', newUser)
+  //     .then(res => {
+  //       setUsers([...users, res.data])
+  //       console.log("Signup -> users", users)
+  //       console.log("Signup -> res.data", res.data)
+  //     })
+  //     .catch(err => {
+  //       console.log("Signup -> err", err)
+  //     })
+  //     .finally(() => {
+  //       setFormValues(initialFormValues)
+  //     })
+  // }
+
   const onInputChange = evt => {
     const { name, value } = evt.target
 
     Yup
       .reach(formSchema, name)
-      //we can then run validate using the value
       .validate(value)
-      // if the validation is successful, we can clear the error message
       .then(() => {
         setFormErrors({
           ...formErrors,
           [name]: ""
         });
       })
-      /* if the validation is unsuccessful, we can set the error message to the message 
-        returned from yup (that we created in our schema) */
+
       .catch(err => {
         setFormErrors({
           ...formErrors,
-          [name]: err.errors[0] // investigate
+          [name]: err.errors[0]
         });
       });
     
@@ -60,15 +75,16 @@ const Signup = () => {
 
     const newUser = {
       username: formValues.username.trim(),
+      primaryemail: formValues.primaryemail.trim(),
       password: formValues.password.trim(),
     }
-    console.log(newUser)
+    console.log("Signup -> newUser", newUser)
+    console.log("Signup -> users", users)
+    // postNewUser(newUser)
 
   }
 
-  // useEffect(() => {
-  //   getUsers()
-  // }, [])
+
 
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => {
@@ -80,6 +96,7 @@ const Signup = () => {
     <div className="entry">
       <h3>Sign up</h3>
       <p>Have an account already, Sign In</p>
+      
       <form className='form-container' onSubmit={onSubmit}>
         <div className='input-form'>
           <label>Username
@@ -88,6 +105,15 @@ const Signup = () => {
               onChange={onInputChange}
 
               name='username'
+              type='text'
+            />
+          </label>
+          <label>Primary Email
+            <input
+              value={formValues.primaryemail}
+              onChange={onInputChange}
+
+              name='primaryemail'
               type='text'
             />
           </label>
@@ -102,13 +128,12 @@ const Signup = () => {
           </label>
         </div>
         <div className='submit-form'>
-          <h4>Sign Up</h4>
-          <button>Submit</button>
+          <button disabled={disabled}>Sign Up</button>
           <div className='errors'>
             <div>{formErrors.username}</div>
+            <div>{formErrors.primaryemail}</div>
             <div>{formErrors.password}</div>
-            <div></div>
-            <div></div>
+
           </div>
         </div>
       </form>

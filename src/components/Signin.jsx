@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import formSchema from '../validation/formSchema'
 import * as Yup from 'yup'
 import Axios from 'axios'
+import { Link, useRouteMatch } from 'react-router-dom'
 
 const initialFormValues = {
     username: '',
@@ -58,7 +59,7 @@ const Signin = () => {
           password: formValues.password.trim(),
         }
         console.log("Signup -> newUser", newUser)
-        console.log("Signup -> users", users)
+        // console.log("Signup -> users", users)
         // postNewUser(newUser)
     
     }
@@ -71,7 +72,12 @@ const Signin = () => {
 
     return (
         <div className="entry">
-          <h3>Sign in</h3>          
+          <h3>Sign in</h3>
+          <p>New User?
+            <Link to={`/`}>
+                <span>  Sign Up</span>
+            </Link>
+        </p>          
           <form className='form-container' onSubmit={onSubmit}>
             <div className='input-form'>
               <label>Username

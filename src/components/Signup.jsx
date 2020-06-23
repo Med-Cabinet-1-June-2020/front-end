@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import formSchema from '../validation/formSchema'
 import * as Yup from 'yup'
 import Axios from 'axios'
+import { Link, useRouteMatch } from 'react-router-dom'
+
 
 
 
@@ -28,21 +30,15 @@ const Signup = () => {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [disabled, setDisabled] = useState(initalDisabled)
 
-  // const postNewUser = newUser => {
-  //   Axios.post('https://medcabinetjune2020.herokuapp.com/createnewuser', newUser)
-  //     .then(res => {
-  //       setUsers([...users, res.data])
-  //       console.log("Signup -> users", users)
-  //       console.log("Signup -> res.data", res.data)
-  //     })
-  //     .catch(err => {
-  //       console.log("Signup -> err", err)
-  //     })
-  //     .finally(() => {
-  //       setFormValues(initialFormValues)
-  //     })
-  // }
-
+  const postNewUser = newUser => {
+  
+      setUsers([...users, newUser])
+      // console.log("Signup -> users", users)
+      // console.log("Signup -> res.data", res.data)
+    
+      setFormValues(initialFormValues)
+    
+  }
   const onInputChange = evt => {
     const { name, value } = evt.target
 
@@ -80,7 +76,7 @@ const Signup = () => {
     }
     console.log("Signup -> newUser", newUser)
     console.log("Signup -> users", users)
-    // postNewUser(newUser)
+    postNewUser(newUser)
 
   }
 
@@ -95,8 +91,11 @@ const Signup = () => {
   return (
     <div className="entry">
       <h3>Sign up</h3>
-      <p>Have an account already, Sign In</p>
-      
+      <p>Have an account already?
+        <Link to={`/signin`}>
+          <span>  Sign In</span>
+        </Link>
+      </p>
       <form className='form-container' onSubmit={onSubmit}>
         <div className='input-form'>
           <label>Username

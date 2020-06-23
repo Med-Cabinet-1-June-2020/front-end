@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import formSchema from '../validation/formSchema'
 import * as Yup from 'yup'
-import Axios from 'axios'
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
@@ -90,7 +89,7 @@ const Signup = () => {
 
   return (
     <div className="entry">
-      <h3>Sign up</h3>
+      <h3>Sign Up</h3>
       <p>Have an account already?
         <Link to={`/signin`}>
           <span>  Sign In</span>
@@ -122,7 +121,7 @@ const Signup = () => {
               onChange={onInputChange}
 
               name='password'
-              type='text'
+              type='password'
             />
           </label>
         </div>

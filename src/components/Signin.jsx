@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import formSchema from '../validation/formSchema'
 import * as Yup from 'yup'
-import Axios from 'axios'
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const initialFormValues = {
     username: '',
@@ -72,7 +71,7 @@ const Signin = () => {
 
     return (
         <div className="entry">
-          <h3>Sign in</h3>
+          <h3>Sign In</h3>
           <p>New User?
             <Link to={`/`}>
                 <span>  Sign Up</span>
@@ -95,7 +94,7 @@ const Signin = () => {
                   onChange={onInputChange}
     
                   name='password'
-                  type='text'
+                  type='password'
                 />
               </label>
             </div>

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import formSchema from '../validation/formSchema'
+// import formSchema from '../validation/formSchema'
+import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
+
+
 
 
 
@@ -40,7 +43,22 @@ const Signup = () => {
   const onInputChange = evt => {
     const { name, value } = evt.target
 
-    
+    // Yup
+    //   .reach(formSchema, name)
+    //   .validate(value)
+    //   .then(() => {
+    //     setFormErrors({
+    //       ...formErrors,
+    //       [name]: ""
+    //     });
+    //   })
+
+    //   .catch(err => {
+    //     setFormErrors({
+    //       ...formErrors,
+    //       [name]: err.errors[0]
+    //     });
+    //   });
     
     setFormValues({
       ...formValues,
@@ -65,11 +83,11 @@ const Signup = () => {
 
 
 
-  useEffect(() => {
-    formSchema.isValid(formValues).then(valid => {
-      setDisabled(!valid)
-    })
-  }, [formValues])
+  // useEffect(() => {
+  //   formSchema.isValid(formValues).then(valid => {
+  //     setDisabled(!valid)
+  //   })
+  // }, [formValues])
 
   return (
     <div className="entry">

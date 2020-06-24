@@ -7,6 +7,7 @@ import Signup from './components/Signup'
 import Signin from './components/Signin'
 import Nav from './components/Nav'
 import StrainList from './components/StrainList' 
+import RecommendForm from './components/RecommendForm'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             <Signup />
           </Route>
         </Switch>
+        <RecommendForm />
         <StrainList />
       </div>
     </>

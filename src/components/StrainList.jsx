@@ -25,13 +25,16 @@ const StrainList = () => {
             <h3>Strains</h3>
             <div className='strain-list'>
                 {strainList.map(strain => (
-                    <div>
+                    <div className='entry'>
                         <h2>{strain.strain}</h2>
-                        <p>race: {strain.race}</p>
-                        <p>type: {strain.type}</p>
-                        <p>flavors: {strain.flavors[0]},  {strain.flavors[1]},  {strain.flavors[2]}</p>
-                        <p>description:</p>
-                        <p>{strain.description}</p>
+                        <p>Race: {strain.race}</p>
+                        <p>Type: {strain.type}</p>
+                        <p>Description:<br/>{strain.description}</p>
+                        <p>Flavors: {strain.flavors[0]},  {strain.flavors[1]},  {strain.flavors[2]}</p>
+                        <p>Medicinal Uses: {strain.medical[0]},  {strain.medical[1]},  {strain.medical[2]}</p>
+                        <p>Positive Effects: {strain.positive[0]},  {strain.positive[1]},  {strain.positive[2]}</p>
+                        <p>Negative Effects: {strain.negative[0]},  {strain.negative[1]},  {strain.negative[2]}</p>
+                        <p>Rating: {strain.rating}/5</p>
 
 
                       

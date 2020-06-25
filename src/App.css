@@ -50,21 +50,17 @@ button {
   border-bottom:  3px solid #355a20;
   padding-bottom: 1rem;
 }
-.medical label{
+.medical label, .effects label{
   display: flex;
-  justify-content: space-between;
-  width: 30%;
+  justify-content: flex-end;
   margin-top: 1rem;
   font-size: 1rem;
   color: #059033;
+  flex-direction: row-reverse;
+  padding-left: 1rem;
 }
-.effects label{
-  display: flex;
-  justify-content: space-between;
-  width: 30%;
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #059033;
+.effects input, .medical input{
+  margin-right:1rem;
 }
 .nav nav {
   display:flex;

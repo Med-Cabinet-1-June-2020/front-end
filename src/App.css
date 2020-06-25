@@ -9,33 +9,79 @@
   border-radius: 8px;
   width: 50%;
   margin: 0 auto;
-  padding: .6rem;
+  padding: 2rem;
 }
 
 .logo {
   color: #059033;
   font-size: 1.8rem;
+  padding: 1rem 2rem;
 }
 #logo-s {
   color: #7baa47;
 }
-.input-form {
-  display:flex;
-  flex-direction: column;
 
-}
 .input-form input{
   display:flex;
   justify-content:space-between;
   margin-top: .6rem;
+  margin-bottom: .6rem;
+  font-size: 1rem;
+
 
 }
 .input-form label{
   margin-top: 1rem;
+  font-size: 1rem;
 }
 .errors {
   color:red;
 }
-.submit-form button {
+button {
   margin-top: 1rem;
+  color:  #059033;
+}
+.ailments, .effects {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+.ailments h2, .effects  h2 {
+  border-bottom:  3px solid #355a20;
+  padding-bottom: 1rem;
+}
+.ailments label{
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #059033;
+}
+.effects label{
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #059033;
+}
+.nav nav {
+  display:flex;
+  justify-content: space-around;
+  padding: 1.5rem;
+  font-size: 1rem;
+  background-color: #7baa47;
+  /* border-radius: 8px; */
+  margin-bottom: 10vh;
+
+}
+.nav nav a{
+  text-decoration: none;
+  color: black;
+
+}
+.strain h3 {
+  border-top: 3px solid #355a20;
+  padding-top: 1rem;
 }

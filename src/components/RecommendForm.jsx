@@ -75,7 +75,7 @@ const RecommendForm = () => {
         <div className='entry'>
             <form className='form-container' onSubmit={onSubmit}>
                 <div className='ailments'>
-                    <h3>Medical Ailments</h3>
+                    <h2>Medical Ailments</h2>
                     <label>stress
                         <input
                             name='stress'
@@ -198,7 +198,7 @@ const RecommendForm = () => {
             <form className='form-container' onSubmit={onSubmit}>
 
                 <div className='effects'>
-                    <h3>Desired Effects</h3>
+                    <h2>Desired Effects</h2>
                     <label>relaxed
                         <input
                             name='relaxed'

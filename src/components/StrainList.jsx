@@ -21,10 +21,10 @@ const StrainList = () => {
     return (
         <div className='entry'>
             <div className='strain-list'>
-            <h3 className='entry'>Strains</h3>
+            <h2>Strains</h2>
                 {strainList.map(strain => (
                     <div className='strain'>
-                        <h2>{strain.strain}</h2>
+                        <h3>{strain.strain}</h3>
                         <p>Race: {strain.race}</p>
                         <p>Type: {strain.type}</p>
                         <p>Description:<br/>{strain.description}</p>

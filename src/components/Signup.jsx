@@ -126,15 +126,13 @@ const Signup = () => {
             />
           </label>
         </div>
+        <div className='errors'>{formErrors.username}</div>
+        <div className='errors'>{formErrors.primaryemail}</div>
+        <div className='errors'>{formErrors.password}</div>
         <div className='submit-form'>
           <button disabled={disabled}>Sign Up</button>
         </div>
-          <div className='errors'>
-            <div>{formErrors.username}</div>
-            <div>{formErrors.primaryemail}</div>
-            <div>{formErrors.password}</div>
 
-          </div>
       </form>
     </div>
   )

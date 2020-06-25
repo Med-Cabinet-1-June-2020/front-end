@@ -98,13 +98,11 @@ const Signin = () => {
                 />
               </label>
             </div>
+            <div className='errors'>{formErrors.username}</div>
+            <div className='errors'>{formErrors.password}</div>
             <div className='submit-form'>
               <button disabled={disabled}>Sign In</button>
-              <div className='errors'>
-                <div>{formErrors.username}</div>
-                <div>{formErrors.password}</div>
-    
-              </div>
+            
             </div>
           </form>
         </div>

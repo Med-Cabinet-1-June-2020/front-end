@@ -10,6 +10,7 @@ const StrainList = () => {
             Axios.get('https://medcabinetjune2020.herokuapp.com/strains/all')
                 .then(res => {
                     setStrainList(res.data)
+                    console.log("getStrains -> res.data", res.data)
                 })
                 .catch(err => {
                     console.log("getStrains -> err", err) 
@@ -25,7 +26,6 @@ const StrainList = () => {
                 {strainList.map(strain => (
                     <div className='strain'>
                         <h3>{strain.strain}</h3>
-                        <p>Race: {strain.race}</p>
                         <p>Type: {strain.type}</p>
                         <p>Description:<br/>{strain.description}</p>
                         <p>Flavors: {strain.flavors[0]}  {strain.flavors[1]}  {strain.flavors[2]}</p>

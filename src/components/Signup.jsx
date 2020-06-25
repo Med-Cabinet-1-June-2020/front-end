@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import formSchema from '../validation/formSchema'
+import formSchema from '../validation/formSchema'
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
 
@@ -22,20 +22,19 @@ const initialFormErrors = {
 
 const initialUsers = []
 
-const initalDisabled = true
+const initialDisabled = true
 
 const Signup = () => {
 
   const [users, setUsers] = useState(initialUsers)
   const [formValues, setFormValues] = useState(initialFormValues)
   const [formErrors, setFormErrors] = useState(initialFormErrors)
-  const [disabled, setDisabled] = useState(initalDisabled)
-
+  const [disabled, setDisabled] = useState(initialDisabled)
+  
   const postNewUser = newUser => {
   
       setUsers([...users, newUser])
-      // console.log("Signup -> users", users)
-      // console.log("Signup -> res.data", res.data)
+      console.log("Signup -> users", users)
     
       setFormValues(initialFormValues)
     
@@ -43,22 +42,22 @@ const Signup = () => {
   const onInputChange = evt => {
     const { name, value } = evt.target
 
-    // Yup
-    //   .reach(formSchema, name)
-    //   .validate(value)
-    //   .then(() => {
-    //     setFormErrors({
-    //       ...formErrors,
-    //       [name]: ""
-    //     });
-    //   })
+    Yup
+      .reach(formSchema, name)
+      .validate(value)
+      .then(() => {
+        setFormErrors({
+          ...formErrors,
+          [name]: ""
+        });
+      })
 
-    //   .catch(err => {
-    //     setFormErrors({
-    //       ...formErrors,
-    //       [name]: err.errors[0]
-    //     });
-    //   });
+      .catch(err => {
+        setFormErrors({
+          ...formErrors,
+          [name]: err.errors[0]
+        });
+      });
     
     setFormValues({
       ...formValues,
@@ -83,11 +82,11 @@ const Signup = () => {
 
 
 
-  // useEffect(() => {
-  //   formSchema.isValid(formValues).then(valid => {
-  //     setDisabled(!valid)
-  //   })
-  // }, [formValues])
+  useEffect(() => {
+    formSchema.isValid(formValues).then(valid => {
+      setDisabled(!valid);
+    })
+  }, [formValues])
 
   return (
     <div className="entry">
@@ -129,13 +128,13 @@ const Signup = () => {
         </div>
         <div className='submit-form'>
           <button disabled={disabled}>Sign Up</button>
+        </div>
           <div className='errors'>
             <div>{formErrors.username}</div>
             <div>{formErrors.primaryemail}</div>
             <div>{formErrors.password}</div>
 
           </div>
-        </div>
       </form>
     </div>
   )

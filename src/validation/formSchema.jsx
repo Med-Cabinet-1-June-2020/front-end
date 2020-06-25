@@ -13,12 +13,12 @@ const formSchema = Yup.object().shape({
         .string()
         .min(5, 'PASSWORD MUST BE AT LEAST 5 CHARACTERS LONG')
         .required('PASSWORD IS REQUIRED'),
-    ailments: Yup
-        .string()
-        .required('MUST SELECT AILMENT'),
-    effects: Yup
-        .string()
-        .required('MUST SELECT EFFECT'),
+    // ailments: Yup
+    //     .string()
+    //     .required('MUST SELECT AILMENT'),
+    // effects: Yup
+    //     .string()
+    //     .required('MUST SELECT EFFECT'),
 })
 
 export default formSchema

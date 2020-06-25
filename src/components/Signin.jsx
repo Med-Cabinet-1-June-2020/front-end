@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import formSchema from '../validation/formSchema'
+import signinSchema from '../validation/signinSchema'
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
 
@@ -15,33 +15,33 @@ const initialFormValues = {
   
 const initialUsers = []
   
-const initalDisabled = true
+const initialDisabled = true
   
 const Signin = () => {
     const [users, setUsers] = useState(initialUsers)
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors)
-    const [disabled, setDisabled] = useState(initalDisabled)
+    const [disabled, setDisabled] = useState(initialDisabled)
 
     const onInputChange = evt => {
         const { name, value } = evt.target
     
-        // Yup
-        //   .reach(formSchema, name)
-        //   .validate(value)
-        //   .then(() => {
-        //     setFormErrors({
-        //       ...formErrors,
-        //       [name]: ""
-        //     });
-        //   })
+        Yup
+          .reach(signinSchema, name)
+          .validate(value)
+          .then(() => {
+            setFormErrors({
+              ...formErrors,
+              [name]: ""
+            });
+          })
     
-        //   .catch(err => {
-        //     setFormErrors({
-        //       ...formErrors,
-        //       [name]: err.errors[0]
-        //     });
-        //   });
+          .catch(err => {
+            setFormErrors({
+              ...formErrors,
+              [name]: err.errors[0]
+            });
+          });
         
         setFormValues({
           ...formValues,
@@ -63,11 +63,11 @@ const Signin = () => {
     
     }
 
-    // useEffect(() => {
-    //     formSchema.isValid(formValues).then(valid => {
-    //       setDisabled(!valid)
-    //     })
-    // }, [formValues])
+    useEffect(() => {
+        signinSchema.isValid(formValues).then(valid => {
+          setDisabled(!valid)
+        })
+    }, [formValues])
 
     return (
         <div className="entry">
@@ -76,7 +76,7 @@ const Signin = () => {
             <Link to={`/`}>
                 <span>  Sign Up</span>
             </Link>
-        </p>          
+          </p>          
           <form className='form-container' onSubmit={onSubmit}>
             <div className='input-form'>
               <label>Username

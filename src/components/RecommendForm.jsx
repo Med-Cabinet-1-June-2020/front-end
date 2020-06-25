@@ -32,18 +32,17 @@ const initialValues = {
     }
 }
 const initialRecommendation = []
-const initialDisabled = true
+// const initialDisabled = true
 const RecommendForm = () => {
 
     const [recommendation, setRecommendation] = useState(initialRecommendation)
     const [values, setValues] = useState(initialValues)
-    const [disabled, setDisabled] = useState(initialDisabled)
+    // const [disabled, setDisabled] = useState(initialDisabled)
 
     const onCheckboxChange = evt => {
         const { name, checked } = evt.target
 
         setValues({
-            ...values,
             ailments: {
                 ...values.ailments,
                 [name]: checked,
@@ -54,16 +53,21 @@ const RecommendForm = () => {
             },
         })
     }
-
+    const postNewRecommendation = (newRec) => {
+        setRecommendation([...recommendation, newRec])
+        setValues(initialValues)
+    }
     const onSubmit = evt => {
         evt.preventDefault()
 
         const newRecommendation = {
             ailments: Object.keys(values.ailments)
                 .filter(ailmentName => (values.ailments[ailmentName] === true)),
+                
             effects: Object.keys(values.effects)
                 .filter(effectName => (values.effects[effectName] === true)),
         }
+        postNewRecommendation(newRecommendation)
         console.log('newRecommendation -->', newRecommendation)
     }
 
@@ -85,8 +89,8 @@ const RecommendForm = () => {
                         <input
                             name='depression'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.depression}
+                            onChange={onCheckboxChange}
+                            checked={values.ailments.depression}
                             
                         />
                     </label>
@@ -190,6 +194,9 @@ const RecommendForm = () => {
                         />
                     </label>
                 </div>
+            </form>
+            <form className='form-container' onSubmit={onSubmit}>
+
                 <div className='effects'>
                     <h3>Desired Effects</h3>
                     <label>relaxed
@@ -205,8 +212,8 @@ const RecommendForm = () => {
                         <input
                             name='hungry'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.hungry}
                             
                         />
                     </label>
@@ -311,7 +318,7 @@ const RecommendForm = () => {
                     </label>
                 </div>
                 <button
-                     disabled={disabled}
+                    //  disabled={disabled}
                      >submit</button>
 
             </form>

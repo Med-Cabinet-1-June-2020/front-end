@@ -41,16 +41,16 @@ button {
   margin-top: 1rem;
   color:  #059033;
 }
-.ailments, .effects {
+.medical, .effects {
   display: flex;
   flex-direction: column;
   padding-bottom: 2rem;
 }
-.ailments h2, .effects  h2 {
+.medical h2, .effects  h2 {
   border-bottom:  3px solid #355a20;
   padding-bottom: 1rem;
 }
-.ailments label{
+.medical label{
   display: flex;
   justify-content: space-between;
   width: 30%;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 const initialValues = {
-    ailments: {
+    medical: {
         stress: false,
         depression: false,
         pain: false,
@@ -43,8 +43,8 @@ const RecommendForm = () => {
         const { name, checked } = evt.target
 
         setValues({
-            ailments: {
-                ...values.ailments,
+            medical: {
+                ...values.medical,
                 [name]: checked,
             },
             effects: {
@@ -61,8 +61,8 @@ const RecommendForm = () => {
         evt.preventDefault()
 
         const newRecommendation = {
-            ailments: Object.keys(values.ailments)
-                .filter(ailmentName => (values.ailments[ailmentName] === true)),
+            medical: Object.keys(values.medical)
+                .filter(ailmentName => (values.medical[ailmentName] === true)),
                 
             effects: Object.keys(values.effects)
                 .filter(effectName => (values.effects[effectName] === true)),
@@ -74,14 +74,14 @@ const RecommendForm = () => {
     return (
         <div className='entry'>
             <form className='form-container' onSubmit={onSubmit}>
-                <div className='ailments'>
+                <div className='medical'>
                     <h2>Medical Ailments</h2>
                     <label>stress
                         <input
                             name='stress'
                             type='checkbox'
                             onChange={onCheckboxChange}
-                            checked={values.ailments.stress}
+                            checked={values.medical.stress}
                             
                         />
                     </label>
@@ -90,7 +90,7 @@ const RecommendForm = () => {
                             name='depression'
                             type='checkbox'
                             onChange={onCheckboxChange}
-                            checked={values.ailments.depression}
+                            checked={values.medical.depression}
                             
                         />
                     </label>
@@ -98,8 +98,8 @@ const RecommendForm = () => {
                         <input
                             name='pain'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.pain}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.pain}
                             
                         />
                     </label>
@@ -107,8 +107,8 @@ const RecommendForm = () => {
                         <input
                             name='insomnia'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.insomnia}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.insomnia}
                             
                         />
                     </label>
@@ -116,8 +116,8 @@ const RecommendForm = () => {
                         <input
                             name='lackOfAppetite'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.lackOfAppetite}
                             
                         />
                     </label>
@@ -125,8 +125,8 @@ const RecommendForm = () => {
                         <input
                             name='muscleSpasms'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.muscleSpasms}
                             
                         />
                     </label>
@@ -134,8 +134,8 @@ const RecommendForm = () => {
                         <input
                             name='cramps'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.cramps}
                             
                         />
                     </label>
@@ -143,8 +143,8 @@ const RecommendForm = () => {
                         <input
                             name='eyePressure'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.eyePressure}
                             
                         />
                     </label>
@@ -152,8 +152,8 @@ const RecommendForm = () => {
                         <input
                             name='inflammation'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.inflammation}
                             
                         />
                     </label>
@@ -161,8 +161,8 @@ const RecommendForm = () => {
                         <input
                             name='headaches'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.headaches}
                             
                         />
                     </label>
@@ -170,8 +170,8 @@ const RecommendForm = () => {
                         <input
                             name='seizures'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.seizures}
                             
                         />
                     </label>
@@ -179,8 +179,8 @@ const RecommendForm = () => {
                         <input
                             name='nausea'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.nausea}
                             
                         />
                     </label>
@@ -188,8 +188,8 @@ const RecommendForm = () => {
                         <input
                             name='fatigue'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.ailments.}
+                            onChange={onCheckboxChange}
+                            checked={values.medical.fatigue}
                             
                         />
                     </label>
@@ -221,8 +221,8 @@ const RecommendForm = () => {
                         <input
                             name='happy'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.happy}
                             
                         />
                     </label>
@@ -230,8 +230,8 @@ const RecommendForm = () => {
                         <input
                             name='sleepy'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.sleepy}
                             
                         />
                     </label>
@@ -239,8 +239,8 @@ const RecommendForm = () => {
                         <input
                             name='euphoric'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.euphoric}
                             
                         />
                     </label>
@@ -248,8 +248,8 @@ const RecommendForm = () => {
                         <input
                             name='creative'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.creative}
                             
                         />
                     </label>
@@ -257,8 +257,8 @@ const RecommendForm = () => {
                         <input
                             name='energetic'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.energetic}
                             
                         />
                     </label>
@@ -266,8 +266,8 @@ const RecommendForm = () => {
                         <input
                             name='talkative'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.talkative}
                             
                         />
                     </label>
@@ -275,8 +275,8 @@ const RecommendForm = () => {
                         <input
                             name='uplifted'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.uplifted}
                             
                         />
                     </label>
@@ -284,8 +284,8 @@ const RecommendForm = () => {
                         <input
                             name='tingly'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.tingly}
                             
                         />
                     </label>
@@ -293,8 +293,8 @@ const RecommendForm = () => {
                         <input
                             name='focused'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.focused}
                             
                         />
                     </label>
@@ -302,8 +302,8 @@ const RecommendForm = () => {
                         <input
                             name='aroused'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.aroused}
                             
                         />
                     </label>
@@ -311,8 +311,8 @@ const RecommendForm = () => {
                         <input
                             name='giggly'
                             type='checkbox'
-                            // onChange={onCheckboxChange}
-                            // checked={values.desired.}
+                            onChange={onCheckboxChange}
+                            checked={values.effects.giggly}
                             
                         />
                     </label>

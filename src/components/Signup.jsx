@@ -130,7 +130,9 @@ const Signup = () => {
         <div className='errors'>{formErrors.primaryemail}</div>
         <div className='errors'>{formErrors.password}</div>
         <div className='submit-form'>
-          <button disabled={disabled}>Sign Up</button>
+          <Link to={`/signin`}>
+            <button disabled={disabled}>Sign Up</button>
+          </Link>
         </div>
 
       </form>

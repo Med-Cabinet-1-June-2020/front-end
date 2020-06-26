@@ -101,7 +101,9 @@ const Signin = () => {
             <div className='errors'>{formErrors.username}</div>
             <div className='errors'>{formErrors.password}</div>
             <div className='submit-form'>
-              <button disabled={disabled}>Sign In</button>
+                <Link to={'/dashboard'}>
+                    <button disabled={disabled}>Sign In</button>
+                </Link>
             
             </div>
           </form>

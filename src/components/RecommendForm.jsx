@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 const initialValues = {
     medical: {
         stress: false,
@@ -72,7 +73,7 @@ const RecommendForm = () => {
     }
 
     return (
-        <div className='entry'>
+        <div className='recform'>
             <form className='form-container' onSubmit={onSubmit}>
                 <div className='medical'>
                     <h2>Medical Ailments</h2>
@@ -317,9 +318,11 @@ const RecommendForm = () => {
                         />
                     </label>
                 </div>
-                <button
-                    //  disabled={disabled}
-                     >submit</button>
+                <Link to={'/dashboard/strainlist'}>
+                    <button
+                        //  disabled={disabled}
+                        >submit</button>
+                </Link>
 
             </form>
         </div>

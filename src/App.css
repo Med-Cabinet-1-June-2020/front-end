@@ -11,7 +11,27 @@
   margin: 0 auto;
   padding: 2rem;
 }
-
+.strain-list {
+  border: 3px solid #355a20;
+  border-radius: 8px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.dashboard {
+  border: 3px solid #355a20;
+  border-radius: 8px;
+  width: 60%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.recform {
+  border: 3px solid #355a20;
+  border-radius: 8px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+}
 .logo {
   color: #059033;
   font-size: 1.8rem;

@@ -8,6 +8,7 @@ import Signin from './components/Signin'
 import Nav from './components/Nav'
 import StrainList from './components/StrainList' 
 import RecommendForm from './components/RecommendForm'
+import Dashboard from './components/Dashboard'
 
 const App = () => {
   return (
@@ -17,6 +18,10 @@ const App = () => {
         <Nav />
 
         <Switch>
+          <Route path='/dashboard'>
+            <Dashboard />
+          </Route>
+
           <Route path='/signin'>
            <Signin />
           </Route>
@@ -24,9 +29,8 @@ const App = () => {
           <Route path='/'>
             <Signup />
           </Route>
+
         </Switch>
-        <RecommendForm />
-        <StrainList />
       </div>
     </>
   )
